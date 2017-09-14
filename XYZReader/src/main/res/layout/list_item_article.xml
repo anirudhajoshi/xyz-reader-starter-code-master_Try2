@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/textview_title_padding"
             android:ellipsize="end"
-            android:maxLines="1" />
+            android:maxLines="@integer/article_title_maxLines" />
 
         <TextView
             android:id="@+id/article_subtitle"
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/textview_subtitle_padding"
-            android:maxLines="2"
+            android:maxLines="@integer/article_subtitle_maxLines"
             android:ellipsize="end" />
     </LinearLayout>
 

@@ -1,5 +1,15 @@
 <resources>
     <!-- detail -->
+    <dimen name="detail_toolbar_container_elevation">4dp</dimen>
+    <dimen name="MaxWidthLinearLayout">2dp</dimen>
+    <item name="detail_article_title_spacing_multiplier" format="float" type="fraction">0.9</item>
+
+
+
+    <item name="article_title_maxLines" format="integer" type="integer">1</item>
+    <item name="article_subtitle_maxLines" format="integer" type="integer">2</item>
+
+    <dimen name="detail_image_button_layout_width">56dp</dimen>
     <dimen name="detail_title_text_size">32sp</dimen>
     <dimen name="detail_body_text_size">22sp</dimen>
     <item name="detail_body_line_spacing_multiplier" format="float" type="fraction">1.25</item>
@@ -7,5 +17,7 @@
     <dimen name="fab_elevation">2dp</dimen>
     <dimen name="fab_press_translation_z">6dp</dimen>
     <dimen name="fab_margin">24dp</dimen>
+    <dimen name="fab_margin_layout_width">56dp</dimen>
+    <dimen name="fab_margin_layout_height">56dp</dimen>
 
 </resources>
