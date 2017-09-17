@@ -18,6 +18,7 @@ import java.util.GregorianCalendar;
 
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
 import android.text.format.DateUtils;
@@ -132,6 +133,31 @@ public class ArticleDetailFragment extends Fragment implements
                 getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
                 mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
                 updateStatusBar();
+
+                mScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+                    @Override
+                    public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+
+                        if (scrollY > oldScrollY) {
+                            Log.i(TAG, "Scroll DOWN");
+                            mRootView.findViewById(R.id.share_fab).setVisibility(View.INVISIBLE);
+                        }
+                        if (scrollY < oldScrollY) {
+                            Log.i(TAG, "Scroll UP");
+                            mRootView.findViewById(R.id.share_fab).setVisibility(View.INVISIBLE);
+                        }
+
+                        if (scrollY == 0) {
+                            Log.i(TAG, "TOP SCROLL");
+                            mRootView.findViewById(R.id.share_fab).setVisibility(View.VISIBLE);
+                        }
+
+                        if (scrollY == (v.getChildAt(0).getMeasuredHeight() - v.getMeasuredHeight())) {
+                            Log.i(TAG, "BOTTOM SCROLL");
+                            mRootView.findViewById(R.id.share_fab).setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
             }
         });
 
@@ -220,7 +246,7 @@ public class ArticleDetailFragment extends Fragment implements
                                 publishedDate.getTime(),
                                 System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
                                 DateUtils.FORMAT_ABBREV_ALL).toString()
-                                + ", by "
+                                + " by "
                                 //+ " by <font color='#ffffff'>"
                                 + mCursor.getString(ArticleLoader.Query.AUTHOR)));
                                 //+ "</font>"));

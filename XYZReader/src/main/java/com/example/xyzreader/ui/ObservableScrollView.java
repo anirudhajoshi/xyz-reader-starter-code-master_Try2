@@ -18,14 +18,19 @@ package com.example.xyzreader.ui;
 
 import android.content.Context;
 import android.os.Parcelable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ScrollView;
 
+import com.example.xyzreader.R;
+
 /**
  * A custom ScrollView that can accept a scroll listener.
  */
-public class ObservableScrollView extends ScrollView {
+// public class ObservableScrollView extends ScrollView {
+public class ObservableScrollView extends NestedScrollView {
     private Callbacks mCallbacks;
 
     public ObservableScrollView(Context context, AttributeSet attrs) {
@@ -34,7 +39,9 @@ public class ObservableScrollView extends ScrollView {
 
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+
         super.onScrollChanged(l, t, oldl, oldt);
+
         if (mCallbacks != null) {
             mCallbacks.onScrollChanged();
         }

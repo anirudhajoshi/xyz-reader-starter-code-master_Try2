@@ -28,7 +28,7 @@
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/indigo_500</item>
         <item name="colorPrimaryDark">@color/indigo_700</item>
-        <item name="colorAccent">@color/pink_700</item>
+        <item name="colorAccent">@color/pink_A200</item>
     </style>
 
     <style name="ArticleTitleFont">

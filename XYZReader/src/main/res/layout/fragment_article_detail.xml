@@ -92,13 +92,13 @@
     app:fabSize="normal"
     app:elevation="@dimen/fab_elevation"
     android:layout_gravity="bottom|end"
-    app:pressedTranslationZ="@dimen/fab_pressedTranslationZ"
     android:src="@drawable/ic_share"
     android:layout_width="@dimen/fab_margin_layout_width"
     android:layout_height="@dimen/fab_margin_layout_height"
     android:layout_marginRight="@dimen/fab_margin"
     android:layout_marginBottom="@dimen/fab_margin"
     android:contentDescription="@string/action_share"
+    android:stateListAnimator="@animator/fab_state_list_anim"
     />
 
 </com.example.xyzreader.ui.DrawInsetsFrameLayout>
